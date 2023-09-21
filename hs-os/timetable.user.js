@@ -1,6 +1,9 @@
 // ==UserScript==
 // @name        hs-os timetable
 // @namespace   https://github.com/Syntoxr
+// @downloadURL https://github.com/Syntoxr/userscripts/raw/main/hs-os/timetable.user.js
+// @supportURL  https://github.com/Syntoxr/userscripts/tree/main/hs-os
+// @homepageURL https://github.com/Syntoxr/userscripts/tree/main
 // @include     /^https:\/\/studienorganisation\.hs-osnabrueck\.de\/scripts\/mgrqispi\.dll\?APPNAME=CampusNet&PRGNAME=SCHEDULER/
 // @grant       GM_addStyle
 // @version     1.0
