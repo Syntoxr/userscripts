@@ -12,7 +12,7 @@
 // ==/UserScript==
 
 
-const toolbarElem = document.getElementsByClassName("toolbarElem")[0]
+const toolbarElem = document.getElementsByClassName("toolbar")[0]
 toolbarElem.innerHTML += `
 <div class="btn-group me-2"><button id="btnExport" class="btn btn-primary"><i class="bi"></i>Export</button></div>
 <div class="btn-group me-2"><button id="btnImport" class="btn btn-primary"><i class="bi"></i>Import</button></div>
@@ -48,7 +48,6 @@ reader.onload = function() {
 
 ulInputElem.addEventListener("change", (event) => {
   const file = event.target.files[0]
-  console.log(file)
 
   if (file.type !== "application/json") {
     console.warn("uploaded wrong file type: " + file.type)
