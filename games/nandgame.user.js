@@ -6,7 +6,7 @@
 // @homepageURL https://github.com/Syntoxr/userscripts/tree/main
 // @match       https://www.nandgame.com/
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Syntoxr
 // @description Adds import / export functionality to nandgame
 // @run-at      document-idle
