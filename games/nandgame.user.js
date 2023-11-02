@@ -9,6 +9,7 @@
 // @version     1.0
 // @author      Syntoxr
 // @description Adds import / export functionality to nandgame
+// @run-at      document-idle
 // ==/UserScript==
 
 
@@ -39,11 +40,14 @@ function exportSave() {
 btnExport.addEventListener("click",() => {exportSave()})
 btnImport.addEventListener("click",() => {ulInputElem.click()})
 
-
+//read file and overwrite localstorage
 const reader = new FileReader();
 reader.onload = function() {
   var fileContent = JSON.parse(reader.result);
-  localStorage = fileContent;
+  localStorage.clear();
+  for (const [key, value] of Object.entries(fileContent)) {
+    localStorage.setItem(key, value);
+  }
 };
 
 ulInputElem.addEventListener("change", (event) => {
