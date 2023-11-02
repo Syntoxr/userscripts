@@ -10,4 +10,5 @@ A collection of small helpful userscripts
 Name | Description 
 ---|---
 [HS-OS](https://github.com/Syntoxr/userscripts/tree/main/hs-os) | Scripts related to the University of Applied Sciences in Osnabrück
+[games](https://github.com/Syntoxr/userscripts/tree/main/games) | Scripts related to browser games
 
