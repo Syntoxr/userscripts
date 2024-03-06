@@ -6,8 +6,8 @@
 // @homepageURL https://github.com/Syntoxr/userscripts/tree/main
 // @include     /^https:\/\/studienorganisation\.hs-osnabrueck\.de\/scripts\/mgrqispi\.dll\?APPNAME=CampusNet&PRGNAME=SCHEDULER/
 // @grant       GM_addStyle
-// @version     1.1
-// @author      Syntoxr
+// @version     1.2
+// @author      Syntoxr, Adrian
 // @description UI improvements like conflict highlighting and better readability
 // ==/UserScript==
 
@@ -26,5 +26,29 @@ for(let i = 0; i < 7; i++){
 
   if (colspan > 1) {
     day.style.cssText += 'background-color:red !important';
+  }
+}
+
+// Find conflicting timeslots and mark them.
+GM_addStyle ( `
+.conflict {
+  background-color:red !important
+}
+` );
+
+const rows = document.getElementById("weekTableRoomplan").children[0].children[1].children
+for (row of rows) {
+  let lastDay = null;
+  let lastAbbr = "";
+  for (td of row.children) {
+    if (td.classList.contains("appointment")) {
+      const abbr = td.abbr.substring(0,2);
+      if (lastAbbr == abbr) {
+        lastDay.classList.add("conflict");
+        td.classList.add("conflict");
+      }
+      lastAbbr = abbr;
+      lastDay = td;
+    }
   }
 }
